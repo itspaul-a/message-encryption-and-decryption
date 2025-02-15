@@ -47,8 +47,30 @@ public class Main{
 
     }
 
+    public static ArrayList<String> splitArray()
+    {
+	String[] arr = getInput();
+	ArrayList<String> al = new ArrayList<String>();
+	for(int i = 0; i < arr.length; i++)
+	{
+	    al.add(arr[i]);
+	    if(i % 4 == 0)
+	    {
+		al.add("\n");
+	    }
+	}
+	
+	//prints array list
+	//for(int i = 0; i < al.size(); i++)
+	//{
+	//    System.out.println(al.get(i));
+	//}
+	
+	return al;
+    }
+
     public static void main(String[] args)
     {
-	    printArray();
+	splitArray();
     }
 }
