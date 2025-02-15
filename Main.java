@@ -70,8 +70,29 @@ public class Main{
 	return al;
     }
 
+    public static void randomTest()
+    {
+	String[] arr = getInput();
+	ArrayList<String> al = new ArrayList<String>();
+	
+	for(int i = 0; i < arr.length; i++)
+	{
+	    if(!(i % 4 == 0))
+	    {
+		al.add(arr[i]);
+	    }
+	}
+
+	for(int i = 0; i < al.size(); i++)
+	{
+	    System.out.println(al.get(i));
+	}
+	
+
+    }
+
     public static void main(String[] args)
     {
-	splitArray();
+	randomTest();
     }
 }
