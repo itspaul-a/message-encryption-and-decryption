@@ -47,6 +47,7 @@ public class Main{
 
     }
 
+    //splits array into groups of 4
     public static ArrayList<String> splitArray()
     {
 	String[] arr = getInput();
