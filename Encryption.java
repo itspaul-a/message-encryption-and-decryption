@@ -11,7 +11,9 @@ import java.io.FileReader;
 public class Encryption extends Input
 {
 
-	public static void encryption()
+	public static String password;
+
+	public static List<Character> encryption()
 	{
 		Scanner scan = new Scanner(System.in);
 
@@ -21,6 +23,7 @@ public class Encryption extends Input
 
 		System.out.print("Enter a password: ");
 		String pass = scan.nextLine();
+		password = pass;
 
 		int temp = 0;
 
@@ -35,13 +38,15 @@ public class Encryption extends Input
 		        temp+=pass.length();
 		    }
 		}
-	
+
+		//print output
 		for(int i = 0; i < words2.size(); i++)
 		{
 		    System.out.print(words2.get(i) + " ");
 		}
 	
 		scan.close();
+		return words2;
 	}
 
 }

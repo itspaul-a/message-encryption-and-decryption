@@ -5,5 +5,8 @@ public class Main extends Encryption
     {
         Encryption e = new Encryption();
         e.encryption();
+
+        //Output o = new Output();
+        //o.outputFile();
     }
 }

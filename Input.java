@@ -10,6 +10,9 @@ import java.io.FileReader;
 
 public class Input
 {
+
+    public static String filepath;
+
     //implements reading file and converting to char array (crazy this doesn't exist)
     public static char[] readFileToCharArray(String filePath) throws IOException 
     {
@@ -29,6 +32,7 @@ public class Input
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter file name: ");
         String filePath = scan.nextLine(); // will change to user input later
+        filepath = filePath;
         try 
 	    {
             char[] letterArray = readFileToCharArray(filePath);
