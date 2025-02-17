@@ -4,25 +4,44 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileReader;
 
 
 public class Input
 {
-    public static String[] getInput() 
+    //implements reading file and converting to char array (crazy this doesn't exist)
+    public static char[] readFileToCharArray(String filePath) throws IOException 
     {
-        String filePath = "file.txt"; // will change to user input later
+    	File file = new File(filePath);
+    	char[] charArray = new char[(int) file.length()];
+       
+    	try (FileReader reader = new FileReader(file)) 
+    	{
+        	reader.read(charArray);
+    	}
+    	return charArray;
+    }
+
+    //takes file as input and returns char array
+    public static char[] getInput() 
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter file name: ");
+        String filePath = scan.nextLine(); // will change to user input later
         try 
-	{
-            String[] letterArray = readFileToStringArray(filePath);
-	    return letterArray;
-                   } 
-	catch (IOException e) 
-	{
+	    {
+            char[] letterArray = readFileToCharArray(filePath);
+	        return letterArray;
+        } 
+	    catch (IOException e) 
+	    {
             System.err.println("Error reading file: " + e.getMessage());
-	    String[] arr = {};
-	    return arr;
+	        char[] arr = {};
+	        return arr;
         }
     }
+
     //convert file to string array
     public static String[] readFileToStringArray(String filePath) throws IOException 
     {
@@ -35,9 +54,10 @@ public class Input
         return letters.toArray(new String[0]);
     }
      
+    //prints array to screen
     public static void printArray()
     {
-	    String[] arr = getInput();
+	    char[] arr = getInput();
 	    for(int i = 0; i < arr.length; i++)
 	    {
 		    System.out.print(arr[i]);
