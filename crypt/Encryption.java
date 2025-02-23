@@ -1,3 +1,6 @@
+package crypt;
+
+
 import java.util.Scanner;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,7 +11,7 @@ import java.nio.file.Paths;
 import java.io.FileReader;
 
 
-public class Encryption extends Input
+public class Encryption 
 {
 
 	public static String password;
@@ -40,10 +43,10 @@ public class Encryption extends Input
 		}
 
 		//print output
-		for(int i = 0; i < words2.size(); i++)
-		{
-		    System.out.print(words2.get(i) + " ");
-		}
+		//for(int i = 0; i < words2.size(); i++)
+		//{
+		//    System.out.print(words2.get(i) + " ");
+		//}
 	
 		scan.close();
 		return words2;
